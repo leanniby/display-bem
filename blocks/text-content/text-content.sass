@@ -1,0 +1,32 @@
+.text-content
+  text-align: left
+  &--align_center
+    text-align: center
+  &--width_750
+    max-width: 750px
+    margin-right: auto
+    margin-left: auto
+  &__head
+    text-transform: uppercase
+    padding-bottom: 1.33em
+    font-size: 1.33em
+    color: $color_text1
+    &--color_lighter
+      color: $color_text3
+  &__text
+    padding-bottom: 1.3em
+    font: $font_text
+    color: $color_text3
+  &__video
+    float: left
+    margin-right: 30px
+    width: 380px
+    height: 240px
+    &--example
+      background: url('../img/video-player.png')
+  &:after
+    content: '.'
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden

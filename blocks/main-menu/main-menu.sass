@@ -1,18 +1,26 @@
 //@import '../style'
 
 .main-menu
-  list-style: none
-  margin: 0
-  padding: 0
   &__element
     display: inline
-    margin-right: 5px
+    margin-right: 2em
     &:last-child
       margin-right: 0
+    &--separator_slash
+      margin-right: 0.5em
+      &:after
+        content: '/'
+        margin-left: 0.5em
+      &:last-child
+        &:after
+          content: none
   &__link
-    font-weight: bold
     text-decoration: none
     text-transform: uppercase
-    color: $color8
+    color: $color_text1
     &:hover
-      color: $color9
+      color: $color_fon3
+    &--color_lighter
+      color: $color_text5
+      &:hover
+        color: $color_fon3

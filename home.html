@@ -6,7 +6,7 @@
     <link rel='stylesheet' type='text/css' href='css/reset.css'>
     <link rel='stylesheet' type='text/css' href='css/home.css'>
 </head>
-<body>
+<body class='b-body'>
     <header class='header wrapper'>
         <div class='header__logo'>
             <div class='logo'>
@@ -64,18 +64,79 @@
         <div class='callout-section__text-container'>
             <p class='callout-section__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu eratiuy lacus, vel congue mauris. Fusce velitaria justo, faucibus eu.</p>
         </div>
-        <a href='#'><div class='callout-section__button'>Browse Portfolio</div></a>
-    </div>
-    <div class='video-section'>
-        <div class='wrapper'>
-            <div class='video-section__video'></div>
-                <h2 class='video-section__head'>Get To Know Us a Little Better!</h2>
-                <p class='video-section__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis tincidunt eros. Nullam tellus turpis, fringilla sit amet congue ut, luctus a nulla. Donec sit amet sapien neque, id ullamcorper diam. Nulla facilisi. Pellentesque pellentesque arcu a elit congue lacinia.</p>
-                <p class='video-section__text'>Nullam tellus turpis, fringilla sit amet congue ut, luctus a nulla. Donec sit amet sapien neque, id ullamcorper diam. Nulla facilisi. Pellentesque pellentesque arcu a elit congue lacinia.</p>
+        <div class='callout-section__button'>
+            <a class='button' href='#'><div class='button__container'>Browse Portfolio</div></a>
         </div>
     </div>
-    <div class='portfolio-section'></div>
-    <div class='callout-section2'></div>
-    <div class='footer'></div>
+    <div class='video-section'>
+        <div class='video-section__wrapper wrapper'>
+            <div class='text-content'>
+                <div class='text-content__video text-content__video--example'>
+                    <video></video>
+                </div>
+                <h2 class='text-content__head'>Get To Know Us a Little Better!</h2>
+                <p class='text-content__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis tincidunt eros. Nullam tellus turpis, fringilla sit amet congue ut, luctus a nulla. Donec sit amet sapien neque, id ullamcorper diam. Nulla facilisi. Pellentesque pellentesque arcu a elit congue lacinia.</p>
+                <p class='text-content__text'>Nullam tellus turpis, fringilla sit amet congue ut, luctus a nulla. Donec sit amet sapien neque, id ullamcorper diam. Nulla facilisi. Pellentesque pellentesque arcu a elit congue lacinia.</p>
+            </div>
+        </div>
+    </div>
+    <div class='portfolio-section wrapper'>
+        <div class='portfolio-section__text_container'>
+            <div class='text-content text-content--align_center text-content--width_750'>
+                <h2 class='text-content__head text-content__head--color_lighter'>A Couple of Our Featured Projects</h2>
+                <p class='text-content__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis tincidunt eros.</p>
+            </div>
+        </div>
+        <div class='portfolio-section__carousel'>
+            <ul class='carousel-list'>
+                <li class='carousel-element'>
+                    <img  class='carousel_item__image' src='img/portfolio1.png'>
+                    <div class='carousel_item__name'>name1</div>
+                    <div class='carousel_item__describe'>describe1</div>
+                </li>
+                <li class='carousel-element'>
+                    <img  class='carousel_item__image' src='img/portfolio2.png'>
+                    <div class='carousel_item__name'>name2</div>
+                    <div class='carousel_item__describe'>describe2</div>
+                </li>
+                <li class='carousel-element'>
+                    <img  class='carousel_item__image' src='img/portfolio3.png'>
+                    <div class='carousel_item__name'>name3</div>
+                    <div class='carousel_item__describe'>describe3</div>
+                </li>
+                <li class='carousel-element'>
+                    <img  class='carousel_item__image' src='img/portfolio4.png'>
+                    <div class='carousel_item__name'>name4</div>
+                    <div class='carousel_item__describe'>describe4</div>
+                </li>
+                <li class='carousel-element'>
+                    <img  class='carousel_item__image' src='img/portfolio5.png'>
+                    <div class='carousel_item__name'>name5</div>
+                    <div class='carousel_item__describe'>describe5</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class='callout-section2'>
+        <div class='callout-section2_wrapper wrapper'>
+            <div class='callout-section2__link'>
+                <a class='button' href='#'><div class='button__container button__container--size_s'>Click Here to Find Out</div></a>
+            </div>
+            <p class='callout-section2__question'>Are You Ready To Be Blown Away?</p>
+        </div>
+    </div>
+    <div class='footer wrapper'>
+        <div class='footer__copyright'>
+            <p>Copyright 2013 Display. All Rights Reserved.</p>
+        </div>
+        <nav class='footer__menu'>
+            <ul class='main-menu'>
+                <li class='main-menu__element main-menu__element--separator_slash'><a class='main-menu__link main-menu__link--color_lighter' href='#'>Home</a></li>
+                <li class='main-menu__element main-menu__element--separator_slash'><a class='main-menu__link main-menu__link--color_lighter' href='#'>About</a></li>
+                <li class='main-menu__element main-menu__element--separator_slash'><a class='main-menu__link main-menu__link--color_lighter' href='#'>Work</a></li>
+                <li class='main-menu__element main-menu__element--separator_slash'><a class='main-menu__link main-menu__link--color_lighter' href='#'>Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>
