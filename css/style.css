@@ -69,6 +69,10 @@
   width: 300px;
   margin-right: 20px; }
 
+.carousel__list-element--current > .carousel__item-name, .carousel__list-element--current .carousel__item-description {
+  opacity: 1;
+  transition: opacity 500ms; }
+
 .carousel__item-link {
   position: relative;
   display: block;
@@ -100,12 +104,14 @@
   padding-bottom: 1.55em;
   color: #8a8888;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  opacity: 0; }
 
 .carousel__item-description {
   font: normal 14px "HelveticaNeue-Regular";
   color: #8a8888;
-  text-align: center; }
+  text-align: center;
+  opacity: 0; }
 
 .carousel__arrow {
   position: absolute;

@@ -5,16 +5,17 @@
 .carousel__list
   position: relative
   list-style: none
-  //width: 10000px
 
 .carousel__list-element
   position: relative
   float: left
   width: 300px
   margin-right: 20px
-  //width: 800px
-  //margin-left: -240px
-  //margin-right: -240px
+
+.carousel__list-element--current
+  & > .carousel__item-name, .carousel__item-description
+    opacity: 1
+    transition: opacity 500ms
 
 .carousel__item-link
   position: relative
@@ -48,11 +49,13 @@
   color: $color_text3
   text-transform: uppercase
   text-align: center
+  opacity: 0
 
 .carousel__item-description
   font: $font_text
   color: $color_text3
   text-align: center
+  opacity: 0
 
 .carousel__arrow
   position: absolute

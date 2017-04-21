@@ -9,13 +9,13 @@ $(document).ready(function() {
     var interval = 500;
 
     var itemsTotal = elementsList.children().length;
-    var widthElements = itemsTotal * widthItem - offsetItem;
-    var needWidth = elementsList.width() - widthElements;
     var ofssetList = (elementsList.width()/2 - widthItem/2)%(widthItem + offsetItem)-widthItem;
-    var needItem = Math.ceil(needWidth / widthItem);
+    var needItem = Math.ceil((elementsList.width() - itemsTotal * widthItem - offsetItem) / widthItem);
 
+    var middleItem = Math.ceil(itemsTotal/2);
     elementsList.css('left', ofssetList);
-    elementsList.css('width', elementsList.width() + 3 * widthItem);
+    elementsList.css('width', elementsList.width() + 3 * (widthItem + offsetItem));
+    elementsList.find(':nth-child('+middleItem+')').addClass('carousel__list-element--current');
     while (needItem > 0) {
         var countItem = Math.min(needItem, itemsTotal);
         elementsList.children(':last').after(elementsList.children().slice(0, countItem).clone(true));
@@ -27,10 +27,12 @@ $(document).ready(function() {
             return;
         isAnimated = true;
         var numItem = elementsList.children().length % itemsTotal;
+        elementsList.find(':nth-child('+middleItem+')').removeClass('carousel__list-element--current');
         elementsList.children(':last').after(elementsList.children().slice(numItem, numItem+1).clone(true));
+        elementsList.find(':nth-child('+(middleItem+1)+')').addClass('carousel__list-element--current');
         elementsList.animate({ left : ofssetList - widthItem - offsetItem + 'px' }, interval, function () {
             elementsList.css('left', ofssetList);
-            elementsList.children().slice(numItem, numItem+1).remove();
+            elementsList.children().slice(0,1).remove();
             isAnimated = false;
         });
     });
@@ -40,7 +42,9 @@ $(document).ready(function() {
             return;
         isAnimated = true;
         elementsList.css('left', ofssetList - widthItem - offsetItem + 'px');
+        elementsList.find(':nth-child('+middleItem+')').removeClass('carousel__list-element--current');
         elementsList.children(':first').before(elementsList.children().slice(itemsTotal-1, itemsTotal).clone(true));
+        elementsList.find(':nth-child('+middleItem+')').addClass('carousel__list-element--current');
         elementsList.animate({left: ofssetList}, interval, function () {
             elementsList.children().slice(-1).remove();
             isAnimated = false;
