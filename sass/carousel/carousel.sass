@@ -1,0 +1,70 @@
+.carousel
+  position: relative
+  min-height: 350px
+
+.carousel__list
+  position: relative
+  list-style: none
+  //width: 10000px
+
+.carousel__list-element
+  position: relative
+  float: left
+  width: 300px
+  margin-right: 20px
+  //width: 800px
+  //margin-left: -240px
+  //margin-right: -240px
+
+.carousel__item-link
+  position: relative
+  display: block
+  opacity: 0.5
+  &:after
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 98px
+    height: 98px
+    margin: -49px 0 0 -49px
+    content: ''
+    background: url('../img/carousel-link.svg') center no-repeat
+    opacity: 0
+  &:hover
+    opacity: 1
+    &:after
+      opacity: 1
+
+.carousel__item-image
+  display: block
+  width: 300px
+  height: 200px
+  margin-right: auto
+  margin-left: auto
+
+.carousel__item-name
+  padding-top: 2.5em
+  padding-bottom: 1.55em
+  color: $color_text3
+  text-transform: uppercase
+  text-align: center
+
+.carousel__item-description
+  font: $font_text
+  color: $color_text3
+  text-align: center
+
+.carousel__arrow
+  position: absolute
+  top: 0
+  left: 50%
+  margin-top: 275px
+  fill: $color_fon2
+  &:hover
+    fill: $color_fon3
+
+.carousel__arrow-left
+    margin-left: -300px
+
+.carousel__arrow-right
+    margin-left: 300px
