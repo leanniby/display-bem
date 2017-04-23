@@ -12,15 +12,11 @@
   width: 300px
   margin-right: 20px
 
-.carousel__list-element--current
-  & > .carousel__item-name, .carousel__item-description
-    opacity: 1
-    transition: opacity 500ms
-
 .carousel__item-link
   position: relative
   display: block
   opacity: 0.5
+  transition: opacity 500ms
   &:after
     position: absolute
     top: 50%
@@ -50,12 +46,22 @@
   text-transform: uppercase
   text-align: center
   opacity: 0
+  transition: opacity 500ms
 
 .carousel__item-description
   font: $font_text
   color: $color_text3
   text-align: center
   opacity: 0
+  transition: opacity 500ms
+  margin: 0
+
+.carousel__list-element--current
+  & > .carousel__item-link
+    opacity: 1
+  & > .carousel__item-name, .carousel__item-description
+    opacity: 1
+    margin: 0 -140px
 
 .carousel__arrow
   position: absolute
@@ -67,7 +73,7 @@
     fill: $color_fon3
 
 .carousel__arrow-left
-    margin-left: -300px
+    margin-left: -295px
 
 .carousel__arrow-right
-    margin-left: 300px
+    margin-left: 305px
