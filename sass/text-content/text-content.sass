@@ -6,19 +6,28 @@
     max-width: 750px
     margin-right: auto
     margin-left: auto
+  &--columns_2
+    column-count: 2
+    column-gap: 50px
   &__head
     text-transform: uppercase
     font-size: 1.33em
     color: $color_text1
-    padding-bottom: 1.33em
+    padding-bottom: 1.25em
     &--color_lighter
       color: $color_text3
   &__text
     font: $font_text
     color: $color_text3
-    padding-bottom: 1.33em
+    padding-bottom: 1.25em
+    line-height: 1.571428em
     &:last-child
       padding-bottom: 0
+  &__img
+    float: left
+    margin-right: 30px
+    width: 380px
+    height: 280px
   &__video
     float: left
     margin-right: 30px
@@ -26,6 +35,16 @@
     height: 240px
     &--example
       background: url('../img/video-player.png')
+  &__ul
+    display: block
+    list-style-type: disc
+    padding-left: 40px
+    list-style-image: url('../img/bullet.png')
+    font: $font_text
+    color: $color_text3
+    line-height: 1.571428em
+  &__li
+    display: list-item
   &:after
     content: '.'
     display: block
