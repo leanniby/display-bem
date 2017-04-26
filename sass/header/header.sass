@@ -9,3 +9,16 @@
   &__main-menu
     clear: both
     border-top: 1px solid $color_social
+
+@media screen and (max-device-width: 640px)
+  .header
+      &__logo
+        font-size: 0.8em
+      &__social-media
+        width: 120px
+        padding: 18px 0
+
+@media screen and (max-device-width: 400px)
+  .header
+    &__main-menu
+      font-size: 0.8em

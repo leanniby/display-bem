@@ -1,79 +1,94 @@
 .carousel
   position: relative
-  min-height: 350px
-
-.carousel__list
-  position: relative
-  list-style: none
-
-.carousel__list-element
-  position: relative
-  float: left
-  width: 300px
-  margin-right: 20px
-
-.carousel__item-link
-  position: relative
-  display: block
-  opacity: 0.5
-  transition: opacity 500ms
-  &:after
-    position: absolute
-    top: 50%
-    left: 50%
-    width: 98px
-    height: 98px
-    margin: -49px 0 0 -49px
-    content: ''
-    background: url('../img/carousel-link.svg') center no-repeat
-    opacity: 0
-  &:hover
-    opacity: 1
+  min-height: 360px
+  overflow: hidden
+  &__list
+    position: relative
+    list-style: none
+  &__list-element
+    position: relative
+    float: left
+    width: 300px
+    margin-right: 20px
+    &--current
+      & > .carousel__item-link
+        opacity: 1
+      & > .carousel__item-name, .carousel__item-description
+        opacity: 1
+        margin: 0 -125px
+  &__item-link
+    position: relative
+    display: block
+    opacity: 0.5
+    transition: opacity 500ms
     &:after
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 98px
+      height: 98px
+      margin: -49px 0 0 -49px
+      content: ''
+      background: url('../img/carousel-link.svg') center no-repeat
+      opacity: 0
+    &:hover
       opacity: 1
-
-.carousel__item-image
-  display: block
-  width: 300px
-  height: 200px
-  margin-right: auto
-  margin-left: auto
-
-.carousel__item-name
-  padding-top: 2.5em
-  padding-bottom: 1.55em
-  color: $color_text3
-  text-transform: uppercase
-  text-align: center
-  opacity: 0
-  transition: opacity 500ms
-
-.carousel__item-description
-  font: $font_text
-  color: $color_text3
-  text-align: center
-  opacity: 0
-  transition: opacity 500ms
-  margin: 0
-
-.carousel__list-element--current
-  & > .carousel__item-link
-    opacity: 1
-  & > .carousel__item-name, .carousel__item-description
-    opacity: 1
-    margin: 0 -140px
-
-.carousel__arrow
-  position: absolute
-  top: 0
-  left: 50%
-  margin-top: 275px
-  fill: $color_fon2
-  &:hover
-    fill: $color_fon3
-
-.carousel__arrow-left
+      &:after
+        opacity: 1
+  &__item-image
+    display: block
+    width: 300px
+    height: 200px
+    margin-right: auto
+    margin-left: auto
+  &__item-name
+    padding-top: 2.5em
+    padding-bottom: 1.55em
+    color: $color_text3
+    text-transform: uppercase
+    text-align: center
+    opacity: 0
+    transition: opacity 500ms
+  &__item-description
+    font: $font_text
+    color: $color_text3
+    text-align: center
+    opacity: 0
+    transition: opacity 500ms
+    margin: 0
+  &__arrow
+    position: absolute
+    top: 275px
+    left: 50%
+    fill: $color_fon2
+    &:hover
+      fill: $color_fon3
+  &__arrow-left
     margin-left: -295px
-
-.carousel__arrow-right
+  &__arrow-right
     margin-left: 305px
+
+@media screen and (max-device-width: 960px)
+  .carousel__arrow
+    fill: $color_fon2
+    left: auto
+    &:hover
+      fill: $color_fon3
+
+  .carousel__arrow-left
+    left: 5px
+    margin-left: 0
+
+  .carousel__arrow-right
+    right: 5px
+    margin-left: 0
+
+@media screen and (max-device-width: 640px)
+  .carousel
+    &__list-element
+      &--current
+        & > .carousel__item-link
+          opacity: 1
+        & > .carousel__item-name, .carousel__item-description
+          opacity: 1
+          margin: 0 auto

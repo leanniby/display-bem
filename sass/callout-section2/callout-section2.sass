@@ -1,12 +1,27 @@
-//@import '../style'
-
 .callout-section2
   background: $color_fon4
   padding: 50px 0
   &__link
     float: right
   &__question
+    float: left
     line-height: 1.86em
     font-size: 1.33em
     text-transform: uppercase
     color: $color_fon2
+  &:after
+    content: '.'
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+@media screen and (max-device-width: 760px)
+  .callout-section2
+    text-align: center
+    &__link
+      float: none
+    &__question
+      float: none
+      line-height: 1.5em
+      margin-bottom: 1.5em

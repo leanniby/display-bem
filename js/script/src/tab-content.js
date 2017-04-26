@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var list = $('.tab-content_list');
+    var list = $('.tab-content__list');
     var current_text = $('.tab-content__current-text');
 
     function showItem(e){

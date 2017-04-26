@@ -9,18 +9,18 @@ $(document).ready(function() {
     var interval = 500;
 
     var itemsTotal = elementsList.children().length;
-    var ofssetList = (elementsList.width()/2 - widthItem/2)%(widthItem + offsetItem)-widthItem;
-    var needItem = Math.ceil((elementsList.width() - itemsTotal * widthItem - offsetItem) / widthItem);
-
-    var middleItem = Math.ceil(itemsTotal/2);
-    elementsList.css('left', ofssetList);
-    elementsList.css('width', elementsList.width() + 3 * (widthItem + offsetItem));
-    elementsList.find(':nth-child('+middleItem+')').addClass('carousel__list-element--current');
+    var needItem = Math.ceil((elementsList.width() - itemsTotal * (widthItem + offsetItem)) / (widthItem + offsetItem)) + 1;
     while (needItem > 0) {
         var countItem = Math.min(needItem, itemsTotal);
         elementsList.children(':last').after(elementsList.children().slice(0, countItem).clone(true));
         needItem = needItem - countItem;
     }
+
+    var ofssetList = (elementsList.width()/2 - (widthItem+offsetItem)/2)%(widthItem + offsetItem)- widthItem - offsetItem/2;
+    var middleItem = Math.ceil((elementsList.width()/2 - widthItem/2)/(widthItem + offsetItem))+1;
+    elementsList.css('left', ofssetList);
+    elementsList.css('width', (elementsList.children().length + 2) * (widthItem + offsetItem));
+    elementsList.find(':nth-child('+middleItem+')').addClass('carousel__list-element--current');
 
     leftUIEl.click(function() {
         if (isAnimated)

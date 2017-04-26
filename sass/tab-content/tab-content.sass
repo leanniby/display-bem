@@ -2,12 +2,13 @@
   &__container-list
     background-color: $color_fon2
   &__list
-    list-style: none
+    font-size: 0
   &__item
     display: inline-block
-    width: 231px
+    width: 25%
     height: 220px
     opacity: 0.5
+    font-size: 18px
     color: $color_text_hover
     &--current
       background-color: $color_social
@@ -28,3 +29,25 @@
   &__current-text
     padding-top: 30px
     min-height: 177px
+
+@media screen and (max-device-width: 640px)
+  .tab-content
+    &__item
+      width: 33.33%
+      height: 160px
+    &__item-link
+      padding-top: 30px
+      padding-bottom: 30px
+    &__item-title
+      padding-top: 20px
+
+@media screen and (max-device-width: 480px)
+  .tab-content
+    &__item
+      width: 50%
+      height: 120px
+    &__item-link
+      padding-top: 15px
+      padding-bottom: 15px
+    &__item-title
+      padding-top: 15px

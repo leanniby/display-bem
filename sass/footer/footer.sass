@@ -1,13 +1,26 @@
-//@import '../style'
-
 .footer
   background: $color_fon1
   padding-top: 1.39em
-  padding-bottom: 2.39em
+  padding-bottom: 1.39em
   color: $color_text5
   font-size: 0.67em
+  &__menu
+    float: right
   &__copyright
     float: left
     text-transform: uppercase
-  &__menu
-    float: right
+  &:after
+    content: '.'
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+@media screen and (max-device-width: 640px)
+  .footer
+    text-align: center
+    &__menu
+      float: none
+      margin-bottom: 1em
+    &__copyright
+      float: none

@@ -8,5 +8,12 @@
     text-decoration: none
     text-transform: uppercase
     color: $color_text1
+    transition: color 500ms
     &:hover
       color: $color_fon3
+      border-bottom: solid 3px $color_fon3
+
+@media screen and (max-device-width: 400px)
+  .main-menu
+    &__element
+      margin-right: 1em
