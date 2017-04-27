@@ -1,9 +1,9 @@
-$(document).ready(function() {
+function initTabContent() {
     var list = $('.tab-content__list');
     var current_text = $('.tab-content__current-text');
 
-    function showItem(e){
-        var je = $(e);
+    function showItem(e) {
+        var je = $(e.currentTarget);
         list.children().removeClass('tab-content__item--current');
         je.addClass('tab-content__item--current');
         current_text.html(je.find('.tab-content__item-text').html());
@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     showItem(list.find(':first'));
 
-    list.children().hover(function(e) {
-        showItem(e.currentTarget);
-    });
-});
+    list.on('mouseenter', '.tab-content__item', showItem);
+};
+
+$(document).ready(initTabContent);

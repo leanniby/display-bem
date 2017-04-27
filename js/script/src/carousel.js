@@ -1,6 +1,5 @@
-$(document).ready(function() {
-    var leftUIEl = $('.carousel__arrow-left');
-    var rightUIEl = $('.carousel__arrow-right');
+function initCarousel() {
+    var carousel = $('.carousel');
     var elementsList = $('.carousel__list');
     var isAnimated = false;
 
@@ -22,32 +21,37 @@ $(document).ready(function() {
     elementsList.css('width', (elementsList.children().length + 2) * (widthItem + offsetItem));
     elementsList.find(':nth-child('+middleItem+')').addClass('carousel__list-element--current');
 
-    leftUIEl.click(function() {
+    function clickCarouselArrow(){
+        var elem = $( this );
         if (isAnimated)
             return;
         isAnimated = true;
-        var numItem = elementsList.children().length % itemsTotal;
-        elementsList.find(':nth-child('+middleItem+')').removeClass('carousel__list-element--current');
-        elementsList.children(':last').after(elementsList.children().slice(numItem, numItem+1).clone(true));
-        elementsList.find(':nth-child('+(middleItem+1)+')').addClass('carousel__list-element--current');
-        elementsList.animate({ left : ofssetList - widthItem - offsetItem + 'px' }, interval, function () {
-            elementsList.css('left', ofssetList);
-            elementsList.children().slice(0,1).remove();
-            isAnimated = false;
-        });
-    });
 
-    rightUIEl.click(function() {
-        if (isAnimated)
-            return;
-        isAnimated = true;
-        elementsList.css('left', ofssetList - widthItem - offsetItem + 'px');
-        elementsList.find(':nth-child('+middleItem+')').removeClass('carousel__list-element--current');
-        elementsList.children(':first').before(elementsList.children().slice(itemsTotal-1, itemsTotal).clone(true));
-        elementsList.find(':nth-child('+middleItem+')').addClass('carousel__list-element--current');
-        elementsList.animate({left: ofssetList}, interval, function () {
-            elementsList.children().slice(-1).remove();
-            isAnimated = false;
-        });
-    });
-});
+        if (elem.is('.carousel__arrow-left')) {
+            var numItem = elementsList.children().length % itemsTotal;
+            elementsList.find(':nth-child(' + middleItem + ')').removeClass('carousel__list-element--current');
+            elementsList.children(':last').after(elementsList.children().slice(numItem, numItem + 1).clone(true));
+            elementsList.find(':nth-child(' + (middleItem + 1) + ')').addClass('carousel__list-element--current');
+            elementsList.animate({left: ofssetList - widthItem - offsetItem + 'px'}, interval, function () {
+                elementsList.css('left', ofssetList);
+                elementsList.children().slice(0, 1).remove();
+                isAnimated = false;
+            });
+        };
+
+        if (elem.is('.carousel__arrow-right')) {
+            elementsList.css('left', ofssetList - widthItem - offsetItem + 'px');
+            elementsList.find(':nth-child('+middleItem+')').removeClass('carousel__list-element--current');
+            elementsList.children(':first').before(elementsList.children().slice(itemsTotal-1, itemsTotal).clone(true));
+            elementsList.find(':nth-child('+middleItem+')').addClass('carousel__list-element--current');
+            elementsList.animate({left: ofssetList}, interval, function () {
+                elementsList.children().slice(-1).remove();
+                isAnimated = false;
+            });
+        };
+    };
+
+    carousel.on('click', '.carousel__arrow', clickCarouselArrow);
+};
+
+$(document).ready(initCarousel);
