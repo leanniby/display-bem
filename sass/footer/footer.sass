@@ -1,19 +1,16 @@
 .footer
-  @include clearfix
+  display: flex
+  flex-direction: column
+  @include tablet
+    flex-direction: row-reverse
+  justify-content: space-between
   background: $color_fon1
   padding-top: 1.39em
-  padding-bottom: 1.39em
   color: $color_text5
   text-align: center
   @include font-size(12px)
-  @include tablet
-    text-align: inherit
   &__menu
-    margin-bottom: 1em
-    @include tablet
-      float: right
-      margin-bottom: 0
+    padding-bottom: 1.39em
   &__copyright
     text-transform: uppercase
-    @include tablet
-      float: left
+    padding-bottom: 1.39em

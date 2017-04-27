@@ -1,21 +1,19 @@
 .callout-section2
-  @include clearfix
-  padding: 25px 0
   background: $color_fon4
-  text-align: center
-  @include tablet
-    padding: 50px 0
-  &__link
+  &__wrapper
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+    padding-bottom: 50px
     @include tablet
-      float: right
+      flex-direction: row
+      align-items: baseline
+      padding-bottom: 50px
+  &__link
+    margin-top: 30px
   &__question
-    margin-bottom: 1em
-    line-height: 1.5em
+    margin-top: 50px
     text-transform: uppercase
     color: $color_fon2
     @include font-size(24px)
-    @include tablet
-      float: left
-      margin-bottom: 0
-      line-height: 1.86em
-      text-align: inherit

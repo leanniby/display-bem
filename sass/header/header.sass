@@ -1,21 +1,20 @@
 $headerElemPaddingTB: 30px
 
 .header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
   background: $color_fon1
   &__logo
-    float: left
     padding-top: $headerElemPaddingTB
     padding-bottom: $headerElemPaddingTB
   &__social-media
-    float: right
     width: 120px
-    padding: 18px 0
     @include tablet
       width: auto
-      padding-top: $headerElemPaddingTB
-      padding-bottom: $headerElemPaddingTB
   &__main-menu
-    clear: both
+    width: 100%
     padding-top: $headerElemPaddingTB
     padding-bottom: $headerElemPaddingTB
     border-top: 1px solid $color_social

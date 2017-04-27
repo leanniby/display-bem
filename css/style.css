@@ -36,81 +36,62 @@
       font-size: 0.77778em; }
 
 .callout-section2 {
-  padding: 25px 0;
-  background: #322f2f;
-  text-align: center; }
-  .callout-section2:after {
-    content: '.';
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  @media (min-width: 768px) {
-    .callout-section2 {
-      padding: 50px 0; } }
-  @media (min-width: 768px) {
-    .callout-section2__link {
-      float: right; } }
+  background: #322f2f; }
+  .callout-section2__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding-bottom: 50px; }
+    @media (min-width: 768px) {
+      .callout-section2__wrapper {
+        flex-direction: row;
+        align-items: baseline;
+        padding-bottom: 50px; } }
+  .callout-section2__link {
+    margin-top: 30px; }
   .callout-section2__question {
-    margin-bottom: 1em;
-    line-height: 1.5em;
+    margin-top: 50px;
     text-transform: uppercase;
     color: #efefef;
     font-size: 24px;
     font-size: 1.33333em; }
-    @media (min-width: 768px) {
-      .callout-section2__question {
-        float: left;
-        margin-bottom: 0;
-        line-height: 1.86em;
-        text-align: inherit; } }
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #fefefe;
   padding-top: 1.39em;
-  padding-bottom: 1.39em;
   color: #a5a5a5;
   text-align: center;
   font-size: 12px;
   font-size: 0.66667em; }
-  .footer:after {
-    content: '.';
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
   @media (min-width: 768px) {
     .footer {
-      text-align: inherit; } }
+      flex-direction: row-reverse; } }
   .footer__menu {
-    margin-bottom: 1em; }
-    @media (min-width: 768px) {
-      .footer__menu {
-        float: right;
-        margin-bottom: 0; } }
+    padding-bottom: 1.39em; }
   .footer__copyright {
-    text-transform: uppercase; }
-    @media (min-width: 768px) {
-      .footer__copyright {
-        float: left; } }
+    text-transform: uppercase;
+    padding-bottom: 1.39em; }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   background: #fefefe; }
   .header__logo {
-    float: left;
     padding-top: 30px;
     padding-bottom: 30px; }
   .header__social-media {
-    float: right;
-    width: 120px;
-    padding: 18px 0; }
+    width: 120px; }
     @media (min-width: 768px) {
       .header__social-media {
-        width: auto;
-        padding-top: 30px;
-        padding-bottom: 30px; } }
+        width: auto; } }
   .header__main-menu {
-    clear: both;
+    width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
     border-top: 1px solid #dadada; }
@@ -217,8 +198,9 @@
     .text-content__text:last-child {
       padding-bottom: 0; }
   .text-content__img {
+    display: block;
     width: 100%;
-    height: 100%;
+    max-width: 380px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 30px; }
@@ -226,12 +208,14 @@
       .text-content__img {
         float: left;
         width: 380px;
-        height: 280px;
+        height: 260px;
         margin-right: 30px;
         margin-left: 0;
         margin-bottom: 0; } }
   .text-content__video {
     width: 100%;
+    max-width: 380px;
+    height: 240px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 30px; }
@@ -239,7 +223,6 @@
       .text-content__video {
         float: left;
         width: 380px;
-        height: 240px;
         margin-right: 30px;
         margin-left: 0;
         margin-bottom: 0; } }
@@ -266,18 +249,19 @@
     display: list-item; }
 
 .callout-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #fefefe;
-  text-align: center;
   padding: 96px 0 30px 0; }
   .callout-section__text {
-    display: inline-block;
+    text-align: center;
     max-width: 750px;
     color: #aeadad;
     text-transform: uppercase;
     font-size: 16px;
     font-size: 0.88889em; }
   .callout-section__button {
-    display: inline-block;
     margin: 20px 0; }
 
 .carousel {
