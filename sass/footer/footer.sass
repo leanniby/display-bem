@@ -1,26 +1,19 @@
 .footer
+  @include clearfix
   background: $color_fon1
   padding-top: 1.39em
   padding-bottom: 1.39em
   color: $color_text5
-  font-size: 0.67em
+  text-align: center
+  @include font-size(12px)
+  @include tablet
+    text-align: inherit
   &__menu
-    float: right
+    margin-bottom: 1em
+    @include tablet
+      float: right
+      margin-bottom: 0
   &__copyright
-    float: left
     text-transform: uppercase
-  &:after
-    content: '.'
-    display: block
-    height: 0
-    clear: both
-    visibility: hidden
-
-@media screen and (max-device-width: 640px)
-  .footer
-    text-align: center
-    &__menu
-      float: none
-      margin-bottom: 1em
-    &__copyright
-      float: none
+    @include tablet
+      float: left

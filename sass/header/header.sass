@@ -8,23 +8,14 @@ $headerElemPaddingTB: 30px
     padding-bottom: $headerElemPaddingTB
   &__social-media
     float: right
-    padding-top: $headerElemPaddingTB
-    padding-bottom: $headerElemPaddingTB
+    width: 120px
+    padding: 18px 0
+    @include tablet
+      width: auto
+      padding-top: $headerElemPaddingTB
+      padding-bottom: $headerElemPaddingTB
   &__main-menu
     clear: both
     padding-top: $headerElemPaddingTB
     padding-bottom: $headerElemPaddingTB
     border-top: 1px solid $color_social
-
-@media screen and (max-device-width: 640px)
-  .header
-      &__logo
-        font-size: 0.8em
-      &__social-media
-        width: 120px
-        padding: 18px 0
-
-@media screen and (max-device-width: 400px)
-  .header
-    &__main-menu
-      font-size: 0.8em

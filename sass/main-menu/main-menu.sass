@@ -1,7 +1,9 @@
 .main-menu
   &__element
     display: inline
-    margin-right: 2em
+    margin-right: 1em
+    @include tablet
+      margin-right: 2em
     &:last-child
       margin-right: 0
   &__link
@@ -9,11 +11,8 @@
     text-transform: uppercase
     color: $color_text1
     transition: color 500ms
+    @include mobile-mini
+      @include font-size(15px)
     &:hover
       color: $color_fon3
       border-bottom: solid 3px $color_fon3
-
-@media screen and (max-device-width: 400px)
-  .main-menu
-    &__element
-      margin-right: 1em

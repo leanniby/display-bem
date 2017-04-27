@@ -1,27 +1,21 @@
 .callout-section2
+  @include clearfix
+  padding: 25px 0
   background: $color_fon4
-  padding: 50px 0
+  text-align: center
+  @include tablet
+    padding: 50px 0
   &__link
-    float: right
+    @include tablet
+      float: right
   &__question
-    float: left
-    line-height: 1.86em
-    font-size: 1.33em
+    margin-bottom: 1em
+    line-height: 1.5em
     text-transform: uppercase
     color: $color_fon2
-  &:after
-    content: '.'
-    display: block
-    height: 0
-    clear: both
-    visibility: hidden
-
-@media screen and (max-device-width: 760px)
-  .callout-section2
-    text-align: center
-    &__link
-      float: none
-    &__question
-      float: none
-      line-height: 1.5em
-      margin-bottom: 1.5em
+    @include font-size(24px)
+    @include tablet
+      float: left
+      margin-bottom: 0
+      line-height: 1.86em
+      text-align: inherit

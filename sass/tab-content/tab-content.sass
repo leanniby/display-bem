@@ -2,52 +2,45 @@
   &__container-list
     background-color: $color_fon2
   &__list
-    font-size: 0
   &__item
     display: inline-block
-    width: 25%
-    height: 220px
-    opacity: 0.5
-    font-size: 18px
     color: $color_text_hover
+    opacity: 0.5
+    width: 50%
+    height: 120px
+    @include tablet
+      width: 33.33%
+      height: 160px
+    @include desktop
+      width: 25%
+      height: 220px
     &--current
       background-color: $color_social
       opacity: 1
   &__item-link
-    padding-top: 50px
-    padding-bottom: 50px
+    padding-top: 15px
+    padding-bottom: 15px
+    @include tablet
+      padding-top: 30px
+      padding-bottom: 30px
+    @include desktop
+      padding-top: 50px
+      padding-bottom: 50px
   &__item-img
     display: block
     height: 58px
     margin: 0 auto
   &__item-title
-    padding-top: 30px
+    @include font-size(16px)
     text-align: center
     text-transform: uppercase
+    padding-top: 15px
+    @include tablet
+      padding-top: 20px
+    @include desktop
+      padding-top: 30px
   &__item-text
     display: none
   &__current-text
     padding-top: 30px
     min-height: 177px
-
-@media screen and (max-device-width: 640px)
-  .tab-content
-    &__item
-      width: 33.33%
-      height: 160px
-    &__item-link
-      padding-top: 30px
-      padding-bottom: 30px
-    &__item-title
-      padding-top: 20px
-
-@media screen and (max-device-width: 480px)
-  .tab-content
-    &__item
-      width: 50%
-      height: 120px
-    &__item-link
-      padding-top: 15px
-      padding-bottom: 15px
-    &__item-title
-      padding-top: 15px

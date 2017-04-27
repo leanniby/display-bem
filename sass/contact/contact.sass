@@ -1,27 +1,19 @@
 .contact
+  @include clearfix
   padding-top: 2.78em
   padding-bottom: 2.78em
   &__form
-    display: inline-block
-    width: 60%
-    margin-right: 10%
-  &__info
-    display: inline-block
-    width: 30%
-    vertical-align: top
-  &:after
-    content: '.'
     display: block
-    height: 0
-    clear: both
-    visibility: hidden
-
-@media screen and (max-device-width: 940px)
-  .contact
-    &__form
-      display: block
-      width: 100%
-      padding-bottom: 30px
-    &__info
-      display: block
-      width: 100%
+    width: 100%
+    padding-bottom: 30px
+    @include tablet
+      display: inline-block
+      width: 60%
+      margin-right: 10%
+  &__info
+    display: block
+    width: 100%
+    @include tablet
+      display: inline-block
+      vertical-align: top
+      width: 30%
